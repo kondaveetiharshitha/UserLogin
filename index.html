@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Window</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1581091215367-59ab6b0a27e1?fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+      width: 350px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      margin: 100px auto;
+      text-align: center;
+    }
+
+    .login-container img {
+      width: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .login-container input[type="email"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .login-container input[type="checkbox"] {
+      margin-top: 15px;
+    }
+
+    .login-container label {
+      font-size: 14px;
+    }
+
+    .login-container a {
+      color: #d3d3d3;
+      text-decoration: underline;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00c400;
+      color: white;
+      border: none;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      background-color: #009f00;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/147/147144.png" alt="User Icon" />
+    <h2>LOGIN WINDOW</h2>
+    <input type="email" id="email" placeholder="Your Email Address" required />
+    <input type="password" id="password" placeholder="Your Password" required />
+    <div>
+      <input type="checkbox" id="terms" />
+      <label for="terms">Agree With <a href="#">Terms & Condition</a></label>
+    </div>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const terms = document.getElementById("terms").checked;
+
+      if (!email || !password) {
+        alert("Please enter both email and password.");
+        return;
+      }
+
+      if (!terms) {
+        alert("Please agree to the terms and conditions.");
+        return;
+      }
+
+      // Simulated success (Replace this with actual backend call)
+      alert("Login successful for " + email);
+    }
+  </script>
+</body>
+</html>
